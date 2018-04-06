@@ -21,8 +21,11 @@ public class KyuMovement : MonoBehaviour {
 	public float MovementInputValue = 0f;
 
     public Transform animationCamera, animationCamera2;
-    public float animationCameraVelocity;
+    public float animationCameraVelocity,animationCameraRotation;
     public bool nearStatue = false;
+    public Vector3 cameraDistanceInitial;
+
+    
 
     Collider lastStatue;
 
@@ -36,6 +39,8 @@ public class KyuMovement : MonoBehaviour {
         playerRigidbody = GetComponent<Rigidbody>();
 
         cam = GetComponentInChildren<Camera>();
+        cameraDistanceInitial = transform.position - cam.transform.position;
+
     }
 
     private void FixedUpdate()
@@ -57,7 +62,11 @@ public class KyuMovement : MonoBehaviour {
         {
             StartCoroutine(ChangeCameraToStatue(lastStatue));
         }
-            
+
+        cameraDistanceInitial = transform.position - cam.transform.position;
+        print(cameraDistanceInitial);
+        
+
     }
 
     private void Move(float h, float v)
@@ -98,21 +107,54 @@ public class KyuMovement : MonoBehaviour {
 
     IEnumerator ChangeCameraToStatue(Collider other)
     {
-        while(Vector3.Distance(cam.transform.position,animationCamera.position) >= 0.5f)
+        Transform point1;
+        Transform point2;
+        //point1 = other.gameObject.GetComponentInChildren<Transform>();
+        //point2 = other.gameObject.GetComponent<Camera>().transform;
+        Component[] components = other.gameObject.GetComponentsInChildren<Transform>();
+       /* print(components.Length);
+        print(components[0]);
+        print(components[1]);
+        print(components[2]);
+        print(components[3]);
+        print(components[4]);
+        print(components[5]);*/
+
+
+
+        point1 = components[1].transform;
+        point2 = components[2].transform;
+        while (Vector3.Distance(cam.transform.position, point1.position) >= 0.8f)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, point1.position, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, point1.rotation, animationCameraRotation * Time.deltaTime);
+            yield return null;
+
+        }
+        while (Vector3.Distance(cam.transform.position, point2.position) >= 0.5f)
+        {
+            //print(Vector3.Distance(cam.transform.position, animationCamera2.position));
+            cam.transform.position = Vector3.Lerp(cam.transform.position, point2.position, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, point2.rotation, animationCameraRotation * Time.deltaTime);
+            yield return null;
+
+        }
+        /*
+        while(Vector3.Distance(cam.transform.position,animationCamera.position) >= 0.8f)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera.position, animationCameraVelocity * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera.rotation, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera.rotation, animationCameraRotation * Time.deltaTime);
             yield return null;
 
         }
-        while (Vector3.Distance(cam.transform.position, animationCamera2.position) >= 0.5f)
+        while (Vector3.Distance(cam.transform.position, animationCamera2.position) >= 0.2f)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera2.position, animationCameraVelocity * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera2.rotation, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera2.rotation, animationCameraRotation * Time.deltaTime);
             yield return null;
 
         }
-
+        */
 
         cam.enabled = false;
         other.gameObject.SetActiveRecursively(true);

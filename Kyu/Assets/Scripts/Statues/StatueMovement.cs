@@ -21,7 +21,9 @@ public class StatueMovement : MonoBehaviour
     public float TurnInputValue = 0f;
     public float MovementInputValue = 0f;
 
+    public GameObject Kyu;
 
+    Component[] components;
     
 
    
@@ -33,7 +35,10 @@ public class StatueMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
 
+        Kyu = GameObject.FindGameObjectWithTag("Player");
+
         
+
     }
 
     private void FixedUpdate()
@@ -53,7 +58,12 @@ public class StatueMovement : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-           
+            print(Kyu.transform.position);
+            components = this.gameObject.GetComponentsInChildren<Transform>();
+
+            Kyu.transform.position = components[3].transform.position;
+            Kyu.SetActive(true);
+            this.enabled = false;
         }
 
     }
