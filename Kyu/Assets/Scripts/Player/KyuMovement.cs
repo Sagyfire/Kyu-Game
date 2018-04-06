@@ -74,4 +74,21 @@ public class KyuMovement : MonoBehaviour {
 		bool running = speed > 6f;
 		anim.SetBool("IsRunning", running);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Statue")
+        {
+            print("cerca estatua");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Statue")
+        {
+            print("lejos estatua");
+        }
+    }
+
 }
