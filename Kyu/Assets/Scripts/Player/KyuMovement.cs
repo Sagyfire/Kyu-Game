@@ -22,6 +22,9 @@ public class KyuMovement : MonoBehaviour {
 
     public Transform animationCamera, animationCamera2;
     public float animationCameraVelocity;
+    public bool nearStatue = false;
+
+    Collider lastStatue;
 
     //public Camera cam;
     Camera cam;
@@ -46,6 +49,15 @@ public class KyuMovement : MonoBehaviour {
         Move(h, v);
         Turning();
         Animating(h, v);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("space") && nearStatue)
+        {
+            StartCoroutine(ChangeCameraToStatue(lastStatue));
+        }
+            
     }
 
     private void Move(float h, float v)
@@ -89,14 +101,14 @@ public class KyuMovement : MonoBehaviour {
         while(Vector3.Distance(cam.transform.position,animationCamera.position) >= 0.5f)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera.position, animationCameraVelocity * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, animationCamera.rotation, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera.rotation, animationCameraVelocity * Time.deltaTime);
             yield return null;
 
         }
         while (Vector3.Distance(cam.transform.position, animationCamera2.position) >= 0.5f)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera2.position, animationCameraVelocity * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, animationCamera2.rotation, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera2.rotation, animationCameraVelocity * Time.deltaTime);
             yield return null;
 
         }
@@ -105,6 +117,7 @@ public class KyuMovement : MonoBehaviour {
         cam.enabled = false;
         other.gameObject.SetActiveRecursively(true);
         other.gameObject.GetComponentInChildren<Camera>().enabled = true;
+        other.gameObject.GetComponent<StatueMovement>().enabled = true;
         this.gameObject.SetActive(false);
 
     }
@@ -114,7 +127,9 @@ public class KyuMovement : MonoBehaviour {
         if(other.tag == "Statue")
         {
             print("cerca estatua");
-            StartCoroutine(ChangeCameraToStatue(other));
+            nearStatue = true;
+            lastStatue = other;
+            //StartCoroutine(ChangeCameraToStatue(other));
             //other.gameObject.GetComponent<Camera>().enabled = true;
         }
     }
@@ -123,6 +138,8 @@ public class KyuMovement : MonoBehaviour {
     {
         if (other.tag == "Statue")
         {
+            nearStatue = false;
+            lastStatue = null;
             print("lejos estatua");
         }
     }
