@@ -20,11 +20,19 @@ public class KyuMovement : MonoBehaviour {
 	public float TurnInputValue = 0f;
 	public float MovementInputValue = 0f;
 
+    public Transform animationCamera, animationCamera2;
+    public float animationCameraVelocity;
+
+    //public Camera cam;
+    Camera cam;
+
     private void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
+
+        cam = GetComponentInChildren<Camera>();
     }
 
     private void FixedUpdate()
@@ -75,11 +83,39 @@ public class KyuMovement : MonoBehaviour {
 		anim.SetBool("IsRunning", running);
     }
 
+
+    IEnumerator ChangeCameraToStatue(Collider other)
+    {
+        while(Vector3.Distance(cam.transform.position,animationCamera.position) >= 0.5f)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera.position, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, animationCamera.rotation, animationCameraVelocity * Time.deltaTime);
+            yield return null;
+
+        }
+        while (Vector3.Distance(cam.transform.position, animationCamera2.position) >= 0.5f)
+        {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera2.position, animationCameraVelocity * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, animationCamera2.rotation, animationCameraVelocity * Time.deltaTime);
+            yield return null;
+
+        }
+
+
+        cam.enabled = false;
+        other.gameObject.SetActiveRecursively(true);
+        other.gameObject.GetComponentInChildren<Camera>().enabled = true;
+        this.gameObject.SetActive(false);
+
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Statue")
         {
             print("cerca estatua");
+            StartCoroutine(ChangeCameraToStatue(other));
+            //other.gameObject.GetComponent<Camera>().enabled = true;
         }
     }
 

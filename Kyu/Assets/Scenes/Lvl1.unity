@@ -132,6 +132,9 @@ MonoBehaviour:
   TurnSpeed: 180
   TurnInputValue: 0
   MovementInputValue: 0
+  animationCamera: {fileID: 1735885762}
+  animationCamera2: {fileID: 2035545510}
+  animationCameraVelocity: 2
 --- !u!136 &66910861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -177,23 +180,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151291702219168, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 96.5
+      value: 94.89
       objectReference: {fileID: 0}
     - target: {fileID: 4151291702219168, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.000000057601163
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4151291702219168, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.70710677
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4151291702219168, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.000000057601156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4151291702219168, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4151291702219168, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_RootOrder
@@ -1134,6 +1137,45 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &890621380 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1144879276101406, guid: 5d1b4a24560615545ad87cd214d9f7fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 127082115}
+--- !u!114 &890621385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890621380}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d2d5720b5e7af439115bdea46926b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  SlerpSpeed: 5
+  TurnSpeed: 180
+  TurnInputValue: 0
+  MovementInputValue: 0
+  animationCamera: {fileID: 0}
+  animationCamera2: {fileID: 0}
+  animationCameraVelocity: 0
+--- !u!54 &890621386
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 890621380}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &908178996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1616,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1348524088}
   m_Mesh: {fileID: 4300006, guid: fe9ba93f508bf1849bce40f4ae043ed2, type: 3}
+--- !u!4 &1735885762 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4964384229454964, guid: 5d1b4a24560615545ad87cd214d9f7fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 127082115}
 --- !u!1 &1763678683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1723,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1763678683}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2035545510 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4616938760541994, guid: 5d1b4a24560615545ad87cd214d9f7fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 127082115}
 --- !u!1 &2078158650
 GameObject:
   m_ObjectHideFlags: 0
