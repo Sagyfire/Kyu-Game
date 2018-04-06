@@ -8,10 +8,12 @@ public class terrainGenerator : MonoBehaviour {
 	public int width = 256;
 	public int height = 256; //lenght
 
+	public float scale = 20;
+	public float offsetX = 100f;
+	public float offsetY = 100f;
 
-	public float scale = 20f;
 
-	void Start()
+	void Update()
 	{
 		Terrain terrain = GetComponent<Terrain>();
 		terrain.terrainData = GenerateTerrain (terrain.terrainData);
@@ -20,6 +22,8 @@ public class terrainGenerator : MonoBehaviour {
 
 	TerrainData GenerateTerrain(TerrainData terrainData)
 	{
+		terrainData.heightmapResolution = width + 1;
+
 		terrainData.size = new Vector3 (width, depth, height);
 
 		//2 dim array of float, each float is the height of our terrain in a given point
@@ -45,8 +49,8 @@ public class terrainGenerator : MonoBehaviour {
 
 	float CalculateHeight (int x, int y)
 	{
-		float xCoord = x / width * scale;//we use scale for zooming
-		float yCoord = y / height * scale;
+		float xCoord = (float)x / width * scale;//we use scale for zooming
+		float yCoord = (float)y / height * scale;
 		//Converts into NoiseCoord
 		return Mathf.PerlinNoise (xCoord, yCoord);
 	}
