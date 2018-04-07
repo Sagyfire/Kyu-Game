@@ -76,6 +76,7 @@ public class KyuMovement : MonoBehaviour {
 
     private void Move(float h, float v)
     {
+
 		bool moving = h != 0f || v != 0f;
 		bool run = speed > 10f;
 

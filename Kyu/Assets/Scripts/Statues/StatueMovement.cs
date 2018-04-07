@@ -5,7 +5,7 @@ using UnityEngine;
 public class StatueMovement : MonoBehaviour
 {
 
-    public float speed = 0f;
+    public float speed = 2f;
     public float SlerpSpeed = 5f;
     public float TurnSpeed = 180f;
 
@@ -31,6 +31,7 @@ public class StatueMovement : MonoBehaviour
 
     public float lookSensitivity = 3f;
     private Vector3 roatation = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;
     
 
    
@@ -56,12 +57,16 @@ public class StatueMovement : MonoBehaviour
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+        Vector3 movH = transform.right * h;
+        Vector3 movV = transform.forward * v;
+        velocity = (movH + movV).normalized * speed;
 
-        Move(h, v);
+        //Move(h, v);
         //Turning();
         //Animating(h, v);
 
         PerformRotation();
+        PerformMovement();
     }
 
     private void Update()
@@ -117,6 +122,14 @@ public class StatueMovement : MonoBehaviour
         playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(rotation));
     }
 
+    void PerformMovement()
+    {
+        if(velocity != Vector3.zero)
+        {
+            playerRigidbody.MovePosition(playerRigidbody.position + velocity * Time.deltaTime);
+        }
+    }
+
     void Rotate()
     {
 
@@ -153,19 +166,11 @@ public class StatueMovement : MonoBehaviour
 
     private void Move(float h, float v)
     {
-        bool moving = h != 0f || v != 0f;
-        bool run = speed > 10f;
+        movement.Set(h, 0f, v);
 
-        if (moving && run == false)
-            speed += 0.1f;
-        else if (moving && run)
-            speed = 10f;
-        else
-            speed = 0f;
+        movement = movement.normalized * speed * Time.deltaTime;
 
-        movement = transform.forward * MovementInputValue * speed * Time.deltaTime;
-
-        playerRigidbody.MovePosition(playerRigidbody.position + movement);
+        playerRigidbody.MovePosition(transform.position + movement);
     }
 
     void Turning()
