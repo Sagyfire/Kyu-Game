@@ -29,7 +29,8 @@ public class StatueMovement : MonoBehaviour
     public Camera cam;
     public float camVel = 1f, camRot = 2f; //velocity of movement and rotation in the transition of the camera to kyu
 
-
+    public float lookSensitivity = 3f;
+    private Vector3 roatation = Vector3.zero;
     
 
    
@@ -57,8 +58,10 @@ public class StatueMovement : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         Move(h, v);
-        Turning();
+        //Turning();
         //Animating(h, v);
+
+        PerformRotation();
     }
 
     private void Update()
@@ -86,8 +89,6 @@ public class StatueMovement : MonoBehaviour
            // print(Kyu.transform.position - Kyu.GetComponentInChildren<Camera>().transform.position);
             //Stopping movement of statue;
             this.enabled = false;
-            
-            
 
            /* Camera kyuCam = Kyu.GetComponent<Camera>();
             cam.enabled = false; 
@@ -99,8 +100,25 @@ public class StatueMovement : MonoBehaviour
             //Stopping movement of statue;
             this.enabled = false;*/
             
-
         }
+
+        //Calculate rotation: Turning around.
+        float _yRot = Input.GetAxisRaw("Mouse X");
+
+        Vector3 _rotation = new Vector3(0f, _yRot, 0f) * lookSensitivity;
+
+        //Apply rotation
+        rotation = _rotation;
+        
+    }
+
+    void PerformRotation()
+    {
+        playerRigidbody.MoveRotation(playerRigidbody.rotation * Quaternion.Euler(rotation));
+    }
+
+    void Rotate()
+    {
 
     }
 
