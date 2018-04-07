@@ -146,6 +146,7 @@ public class KyuMovement : MonoBehaviour {
         cam.enabled = false;
         other.gameObject.SetActiveRecursively(true);
         other.gameObject.GetComponentInChildren<Camera>().enabled = true;
+        other.gameObject.GetComponent<StatueMovement>().cam.GetComponent<AudioListener>().enabled = true;
         other.gameObject.GetComponent<StatueMovement>().enabled = true;
         this.gameObject.SetActive(false);
 

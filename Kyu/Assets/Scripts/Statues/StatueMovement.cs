@@ -22,11 +22,12 @@ public class StatueMovement : MonoBehaviour
     public float MovementInputValue = 0f;
 
     private GameObject Kyu;
-    private Camera kyuCam;
+    
 
     Component[] components;
 
     public Camera cam;
+    public float camVel = 1f, camRot = 2f; //velocity of movement and rotation in the transition of the camera to kyu
 
 
     
@@ -48,6 +49,7 @@ public class StatueMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //if (this.enabled) cam.GetComponent<AudioListener>().enabled = true;
         TurnInputValue = Input.GetAxis("Horizontal");
         MovementInputValue = Input.GetAxis("Vertical");
 
@@ -61,18 +63,21 @@ public class StatueMovement : MonoBehaviour
 
     private void Update()
     {
+
+        //if (this.enabled) cam.GetComponent<AudioListener>().enabled = true;
         if (Input.GetKeyDown("space"))
         {
-            print(Kyu.transform.position);
 
             //moving kyu
             components = this.gameObject.GetComponentsInChildren<Transform>();
             Kyu.transform.position = components[3].transform.position;
             Kyu.transform.rotation = Kyu.GetComponent<KyuMovement>().initialKyuRotation;
             Kyu.SetActive(true);
-            
 
-            //Changing cams
+            //StartCoroutine(moveCam());
+            //Changing cams --> lets coroutine
+            //Parece que no funciona teniendo una referencia a la cámara y no sé por qué, lo haré todo el rato con getcomponent.
+            cam.GetComponent<AudioListener>().enabled = false;
             cam.enabled = false;
             Kyu.SetActiveRecursively(true);
             Kyu.GetComponentInChildren<Camera>().enabled = true;
@@ -81,7 +86,50 @@ public class StatueMovement : MonoBehaviour
            // print(Kyu.transform.position - Kyu.GetComponentInChildren<Camera>().transform.position);
             //Stopping movement of statue;
             this.enabled = false;
+            
+            
+
+           /* Camera kyuCam = Kyu.GetComponent<Camera>();
+            cam.enabled = false; 
+            Kyu.SetActiveRecursively(true);
+            kyuCam.enabled = true;
+            kyuCam.transform.position = Kyu.transform.position - Kyu.GetComponent<KyuMovement>().cameraDistanceInitial;
+            kyuCam.transform.rotation = Kyu.GetComponent<KyuMovement>().initialCamRotation;
+            // print(Kyu.transform.position - Kyu.GetComponentInChildren<Camera>().transform.position);
+            //Stopping movement of statue;
+            this.enabled = false;*/
+            
+
         }
+
+    }
+
+    IEnumerator moveCam()
+    {
+
+        print("Control point 1");
+        Kyu.GetComponent<Camera>().transform.position = cam.transform.position;
+        Kyu.GetComponent<Camera>().transform.rotation = cam.transform.rotation;
+
+        cam.enabled = false;
+
+        print("Control point 2");
+        Kyu.SetActiveRecursively(true);
+        Kyu.GetComponent<Camera>().enabled = true;
+        print("Control point 3");
+        Vector3 destinationPoint = Kyu.transform.position - Kyu.GetComponent<KyuMovement>().cameraDistanceInitial;
+        Quaternion initialRotation = Kyu.GetComponent<KyuMovement>().initialCamRotation;
+
+        print("Control point 4");
+        while (Vector3.Distance(Kyu.GetComponent<Camera>().transform.position, destinationPoint) > 0.5f)
+        {
+            Kyu.GetComponent<Camera>().transform.position = Vector3.Lerp(Kyu.GetComponent<Camera>().transform.position, destinationPoint, camVel * Time.deltaTime);
+            Kyu.GetComponent<Camera>().transform.rotation = Quaternion.Slerp(Kyu.GetComponent<Camera>().transform.rotation, initialRotation, camRot * Time.deltaTime);
+            yield return null;
+        }
+        print("Control point 5");
+        this.enabled = false;
+        
 
     }
 
