@@ -21,9 +21,14 @@ public class StatueMovement : MonoBehaviour
     public float TurnInputValue = 0f;
     public float MovementInputValue = 0f;
 
-    public GameObject Kyu;
+    private GameObject Kyu;
+    private Camera kyuCam;
 
     Component[] components;
+
+    public Camera cam;
+
+
     
 
    
@@ -59,10 +64,22 @@ public class StatueMovement : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             print(Kyu.transform.position);
-            components = this.gameObject.GetComponentsInChildren<Transform>();
 
+            //moving kyu
+            components = this.gameObject.GetComponentsInChildren<Transform>();
             Kyu.transform.position = components[3].transform.position;
+            Kyu.transform.rotation = Kyu.GetComponent<KyuMovement>().initialKyuRotation;
             Kyu.SetActive(true);
+            
+
+            //Changing cams
+            cam.enabled = false;
+            Kyu.SetActiveRecursively(true);
+            Kyu.GetComponentInChildren<Camera>().enabled = true;
+            Kyu.GetComponentInChildren<Camera>().transform.position = Kyu.transform.position - Kyu.GetComponent<KyuMovement>().cameraDistanceInitial;
+            Kyu.GetComponentInChildren<Camera>().transform.rotation = Kyu.GetComponent<KyuMovement>().initialCamRotation;
+           // print(Kyu.transform.position - Kyu.GetComponentInChildren<Camera>().transform.position);
+            //Stopping movement of statue;
             this.enabled = false;
         }
 

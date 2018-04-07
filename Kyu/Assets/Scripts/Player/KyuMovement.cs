@@ -24,6 +24,8 @@ public class KyuMovement : MonoBehaviour {
     public float animationCameraVelocity,animationCameraRotation;
     public bool nearStatue = false;
     public Vector3 cameraDistanceInitial;
+    public Quaternion initialKyuRotation, initialCamRotation;
+
 
     
 
@@ -40,6 +42,9 @@ public class KyuMovement : MonoBehaviour {
 
         cam = GetComponentInChildren<Camera>();
         cameraDistanceInitial = transform.position - cam.transform.position;
+        print(cameraDistanceInitial);
+        initialKyuRotation = transform.rotation;
+        initialCamRotation = cam.transform.rotation;
 
     }
 
@@ -63,8 +68,8 @@ public class KyuMovement : MonoBehaviour {
             StartCoroutine(ChangeCameraToStatue(lastStatue));
         }
 
-        cameraDistanceInitial = transform.position - cam.transform.position;
-        print(cameraDistanceInitial);
+        //cameraDistanceInitial = transform.position - cam.transform.position;
+        //print(cameraDistanceInitial);
         
 
     }
@@ -109,8 +114,6 @@ public class KyuMovement : MonoBehaviour {
     {
         Transform point1;
         Transform point2;
-        //point1 = other.gameObject.GetComponentInChildren<Transform>();
-        //point2 = other.gameObject.GetComponent<Camera>().transform;
         Component[] components = other.gameObject.GetComponentsInChildren<Transform>();
        /* print(components.Length);
         print(components[0]);
@@ -124,6 +127,7 @@ public class KyuMovement : MonoBehaviour {
 
         point1 = components[1].transform;
         point2 = components[2].transform;
+
         while (Vector3.Distance(cam.transform.position, point1.position) >= 0.8f)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, point1.position, animationCameraVelocity * Time.deltaTime);
@@ -139,23 +143,6 @@ public class KyuMovement : MonoBehaviour {
             yield return null;
 
         }
-        /*
-        while(Vector3.Distance(cam.transform.position,animationCamera.position) >= 0.8f)
-        {
-            cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera.position, animationCameraVelocity * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera.rotation, animationCameraRotation * Time.deltaTime);
-            yield return null;
-
-        }
-        while (Vector3.Distance(cam.transform.position, animationCamera2.position) >= 0.2f)
-        {
-            cam.transform.position = Vector3.Lerp(cam.transform.position, animationCamera2.position, animationCameraVelocity * Time.deltaTime);
-            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, animationCamera2.rotation, animationCameraRotation * Time.deltaTime);
-            yield return null;
-
-        }
-        */
-
         cam.enabled = false;
         other.gameObject.SetActiveRecursively(true);
         other.gameObject.GetComponentInChildren<Camera>().enabled = true;
