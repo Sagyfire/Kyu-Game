@@ -17,9 +17,12 @@ public class KyuMovement : MonoBehaviour {
     int floorMask;
     float camRayLenght = 100f;
 
+
+
 	public float TurnInputValue = 0f;
 	public float MovementInputValue = 0f;
 
+    public float camVelocity = 1f;
     public Transform animationCamera, animationCamera2;
     public float animationCameraVelocity,animationCameraRotation;
     public bool nearStatue = false;
@@ -67,6 +70,9 @@ public class KyuMovement : MonoBehaviour {
         {
             StartCoroutine(ChangeCameraToStatue(lastStatue));
         }
+
+        //TODO
+        //cam.transform.position = Vector3.Lerp(cam.transform.position, this.gameObject.transform.position - cameraDistanceInitial, camVelocity * Time.deltaTime);
 
         //cameraDistanceInitial = transform.position - cam.transform.position;
         //print(cameraDistanceInitial);

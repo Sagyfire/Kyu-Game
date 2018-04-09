@@ -132,6 +132,7 @@ MonoBehaviour:
   TurnSpeed: 180
   TurnInputValue: 0
   MovementInputValue: 0
+  camVelocity: 1
   animationCamera: {fileID: 0}
   animationCamera2: {fileID: 0}
   animationCameraVelocity: 2
@@ -1578,6 +1579,11 @@ Prefab:
     - target: {fileID: 4780531271959602, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114708135107593062, guid: 5d1b4a24560615545ad87cd214d9f7fe,
+        type: 2}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
