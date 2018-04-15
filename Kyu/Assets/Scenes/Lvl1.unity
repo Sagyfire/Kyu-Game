@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 949156897}
-  m_IndirectSpecularColor: {r: 0.02337636, g: 0.07414461, b: 0.10325322, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -14483,7 +14483,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e6a608b944104e34db6dca8bbe90a50f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd173804751b94b4db698d48da59e551, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -21767,7 +21767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenBullets: 0.1
   FireSpawner: {fileID: 1284146158}
-  FireBall: {fileID: 1003898585186998, guid: 810cab98e9b4dda409301d6670c9c941, type: 2}
+  FireBall: {fileID: 1943733210164360, guid: 810cab98e9b4dda409301d6670c9c941, type: 2}
   FireBall_Forward_Force: 1000
 --- !u!1 &1540359743
 GameObject:
