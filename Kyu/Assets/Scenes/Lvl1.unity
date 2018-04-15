@@ -784,6 +784,11 @@ MonoBehaviour:
   camVelocity: 3
   rotationSpeed: 6
   inTransition: 0
+--- !u!4 &513431509 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4554777001074678, guid: 5d1b4a24560615545ad87cd214d9f7fe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1428368565}
 --- !u!1 &557893649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,14 +1662,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114708135107593062, guid: 5d1b4a24560615545ad87cd214d9f7fe,
         type: 2}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114708135107593062, guid: 5d1b4a24560615545ad87cd214d9f7fe,
-        type: 2}
       propertyPath: kyuCam
       value: 
       objectReference: {fileID: 380176739}
+    - target: {fileID: 4554777001074678, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554777001074678, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 333.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554777001074678, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -432.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114708135107593062, guid: 5d1b4a24560615545ad87cd214d9f7fe,
+        type: 2}
+      propertyPath: returnCamPoint
+      value: 
+      objectReference: {fileID: 513431509}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
   m_IsPrefabParent: 0

@@ -92,6 +92,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 0
+--- !u!1 &1628037115343180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4727181416882166}
+  m_Layer: 0
+  m_Name: ReturnToKyu
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1749533030515830
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4554777001074678}
   m_Layer: 0
-  m_Name: ReturnToKyu
+  m_Name: CameraReturnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -184,7 +199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4780531271959602}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4328221698102024
 Transform:
@@ -197,7 +212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4780531271959602}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -110.32, y: 0, z: 0}
 --- !u!4 &4338351338614764
 Transform:
@@ -232,6 +247,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995475034457998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 242.7002, y: 10, z: -68.29997}
+  m_LocalScale: {x: 52.1365, y: 52.1365, z: 52.1365}
+  m_Children: []
+  m_Father: {fileID: 4780531271959602}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4727181416882166
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628037115343180}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 242.7, y: 10, z: -68.3}
   m_LocalScale: {x: 52.1365, y: 52.1365, z: 52.1365}
   m_Children: []
@@ -251,6 +279,7 @@ Transform:
   - {fileID: 4365514898857904}
   - {fileID: 4338351338614764}
   - {fileID: 4010276207584368}
+  - {fileID: 4727181416882166}
   - {fileID: 4554777001074678}
   - {fileID: 4164730392637250}
   - {fileID: 4782903642434084}
@@ -270,7 +299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4780531271959602}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4819926760929068
 Transform:
@@ -283,7 +312,7 @@ Transform:
   m_LocalScale: {x: 52.1365, y: 52.1365, z: 52.1365}
   m_Children: []
   m_Father: {fileID: 4780531271959602}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20333481654486224
 Camera:
@@ -519,12 +548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca460ac6e7e71814d93b8dae28021459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   SlerpSpeed: 5
   TurnSpeed: 180
   TurnInputValue: 0
   MovementInputValue: 0
   cam: {fileID: 20333481654486224}
+  kyuCam: {fileID: 0}
   camVel: 1
   camRot: 2
   lookSensitivity: 3

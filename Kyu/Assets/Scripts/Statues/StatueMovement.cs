@@ -32,6 +32,8 @@ public class StatueMovement : MonoBehaviour
     public float lookSensitivity = 3f;
     private Vector3 roatation = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
+
+    public Transform returnCamPoint;
     
 
    
@@ -89,6 +91,7 @@ public class StatueMovement : MonoBehaviour
             cam.enabled = false;
             Kyu.SetActiveRecursively(true);
             kyuCam.enabled = true;
+            kyuCam.transform.position = returnCamPoint.position;
             kyuCam.GetComponent<CameraScript>().inTransition = false;
             //kyuCam.transform.position = Kyu.transform.position - Kyu.GetComponent<KyuMovement>().cameraDistanceInitial;
             //kyuCam.transform.rotation = Kyu.GetComponent<KyuMovement>().initialCamRotation;
