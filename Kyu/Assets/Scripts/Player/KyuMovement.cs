@@ -28,6 +28,7 @@ public class KyuMovement : MonoBehaviour {
     public bool nearStatue = false;
     public Vector3 cameraDistanceInitial;
     public Quaternion initialKyuRotation, initialCamRotation;
+    public Transform pointOfCam;
 
 
     
@@ -72,7 +73,8 @@ public class KyuMovement : MonoBehaviour {
         }
 
         //TODO
-        //cam.transform.position = Vector3.Lerp(cam.transform.position, this.gameObject.transform.position - cameraDistanceInitial, camVelocity * Time.deltaTime);
+        //cam.transform.position = Vector3.Lerp(cam.transform.position, pointOfCam.position, camVelocity * Time.deltaTime);
+        //cam.transform.rotation = Quaternion.LookRotation(this.gameObject.transform.position);
 
         //cameraDistanceInitial = transform.position - cam.transform.position;
         //print(cameraDistanceInitial);
