@@ -8,6 +8,8 @@ public class CameraScript : MonoBehaviour {
     public Transform orientationOfCam;
     public Transform kyu;
     public float camVelocity = 1f, rotationSpeed = 1f;
+
+    public bool inTransition = false;
     // Use this for initialization
     void Start () {
 		
@@ -15,14 +17,19 @@ public class CameraScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.Lerp(transform.position, positionOfCam.position, camVelocity * Time.deltaTime);
-        /*transform.rotation = Quaternion.LookRotation(kyu.position);*/
+
+        if (!inTransition)
+        {
+            transform.position = Vector3.Lerp(transform.position, positionOfCam.position, camVelocity * Time.deltaTime);
+            /*transform.rotation = Quaternion.LookRotation(kyu.position);*/
 
 
-        Vector3 relativePos = orientationOfCam.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(relativePos);
+            Vector3 relativePos = orientationOfCam.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(relativePos);
 
-        transform.rotation =Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        }
+
     }
     void OnDrawGizmos()
     {

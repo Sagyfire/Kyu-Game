@@ -26,7 +26,7 @@ public class StatueMovement : MonoBehaviour
 
     Component[] components;
 
-    public Camera cam;
+    public Camera cam, kyuCam;
     public float camVel = 1f, camRot = 2f; //velocity of movement and rotation in the transition of the camera to kyu
 
     public float lookSensitivity = 3f;
@@ -88,9 +88,10 @@ public class StatueMovement : MonoBehaviour
             cam.GetComponent<AudioListener>().enabled = false;
             cam.enabled = false;
             Kyu.SetActiveRecursively(true);
-            Kyu.GetComponentInChildren<Camera>().enabled = true;
-            Kyu.GetComponentInChildren<Camera>().transform.position = Kyu.transform.position - Kyu.GetComponent<KyuMovement>().cameraDistanceInitial;
-            Kyu.GetComponentInChildren<Camera>().transform.rotation = Kyu.GetComponent<KyuMovement>().initialCamRotation;
+            kyuCam.enabled = true;
+            kyuCam.GetComponent<CameraScript>().inTransition = false;
+            //kyuCam.transform.position = Kyu.transform.position - Kyu.GetComponent<KyuMovement>().cameraDistanceInitial;
+            //kyuCam.transform.rotation = Kyu.GetComponent<KyuMovement>().initialCamRotation;
            // print(Kyu.transform.position - Kyu.GetComponentInChildren<Camera>().transform.position);
             //Stopping movement of statue;
             this.enabled = false;
@@ -130,10 +131,6 @@ public class StatueMovement : MonoBehaviour
         }
     }
 
-    void Rotate()
-    {
-
-    }
 
     IEnumerator moveCam()
     {

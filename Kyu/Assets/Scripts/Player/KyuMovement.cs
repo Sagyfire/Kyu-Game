@@ -28,15 +28,11 @@ public class KyuMovement : MonoBehaviour {
     public bool nearStatue = false;
     public Vector3 cameraDistanceInitial;
     public Quaternion initialKyuRotation, initialCamRotation;
-    public Transform pointOfCam;
-
-
-    
 
     Collider lastStatue;
 
     //public Camera cam;
-    Camera cam;
+    public Camera cam;
 
     private void Awake()
     {
@@ -44,7 +40,7 @@ public class KyuMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
 
-        cam = GetComponentInChildren<Camera>();
+        //cam = GetComponentInChildren<Camera>();
         cameraDistanceInitial = transform.position - cam.transform.position;
         print(cameraDistanceInitial);
         initialKyuRotation = transform.rotation;
@@ -72,12 +68,6 @@ public class KyuMovement : MonoBehaviour {
             StartCoroutine(ChangeCameraToStatue(lastStatue));
         }
 
-        //TODO
-        //cam.transform.position = Vector3.Lerp(cam.transform.position, pointOfCam.position, camVelocity * Time.deltaTime);
-        //cam.transform.rotation = Quaternion.LookRotation(this.gameObject.transform.position);
-
-        //cameraDistanceInitial = transform.position - cam.transform.position;
-        //print(cameraDistanceInitial);
         
 
     }
@@ -136,6 +126,8 @@ public class KyuMovement : MonoBehaviour {
 
         point1 = components[1].transform;
         point2 = components[2].transform;
+
+        cam.GetComponent<CameraScript>().inTransition = true;
 
         while (Vector3.Distance(cam.transform.position, point1.position) >= 0.8f)
         {
