@@ -135,6 +135,7 @@ public class KyuMovement : MonoBehaviour {
             cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, point1.rotation, animationCameraRotation * Time.deltaTime);
             yield return null;
 
+
         }
         while (Vector3.Distance(cam.transform.position, point2.position) >= 0.5f)
         {
