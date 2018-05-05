@@ -82,13 +82,23 @@ public class GhostScript : MonoBehaviour {
                 }
                 else
                 {
-                    nav.SetDestination(player.position);
+                    if (KyuMovement.intoStatue)
+                    {
+                        currentState = state.goCore;
+                        nav.SetDestination(levelCore.position);
+                        print("el jugador entra en la estatua");
+                    }
+                    else
+                    {
+                        nav.SetDestination(player.position);
+                    }
+                    
                 }
                 
                 break;
 
             case state.goCore:
-                if (distToPlayer <= maxDistToPly)
+                if (distToPlayer <= maxDistToPly && !KyuMovement.intoStatue)
                 {
                     currentState = state.following; //core -> following
 

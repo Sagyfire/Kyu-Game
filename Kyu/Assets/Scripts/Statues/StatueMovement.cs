@@ -77,6 +77,7 @@ public class StatueMovement : MonoBehaviour
         //if (this.enabled) cam.GetComponent<AudioListener>().enabled = true;
         if (Input.GetKeyDown("space"))
         {
+            KyuMovement.intoStatue = false;
 
             //moving kyu
             components = this.gameObject.GetComponentsInChildren<Transform>();

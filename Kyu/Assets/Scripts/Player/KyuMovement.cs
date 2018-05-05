@@ -34,6 +34,8 @@ public class KyuMovement : MonoBehaviour {
     //public Camera cam;
     public Camera cam;
 
+    public static bool intoStatue = false;
+
     private void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
@@ -111,6 +113,8 @@ public class KyuMovement : MonoBehaviour {
 
     IEnumerator ChangeCameraToStatue(Collider other)
     {
+        intoStatue = true;          //This to make the enemies continue to the core.
+
         Transform point1;
         Transform point2;
         Component[] components = other.gameObject.GetComponentsInChildren<Transform>();
