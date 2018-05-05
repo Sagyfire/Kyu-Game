@@ -4,23 +4,26 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TextColor : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class TextColor : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public Color colorin, colorado;
+    private Text myText;
 
-    // Use this for initialization
-    void ISelectHandler.OnSelect(BaseEventData eventData)
+    void Start()
     {
-        gameObject.GetComponentInChildren<Text>().color = new Color(0, 255, 255, 255);
+        myText = GetComponentInChildren<Text>();
     }
 
-    // Update is called once per frame
-    void IDeselectHandler.OnDeselect(BaseEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        gameObject.GetComponentInChildren<Text>().color = new Color(0, 0, 0, 255);
+        myText.color = colorin;
+        myText.fontSize = 55;
     }
 
-    private void OnMouseUpAsButton()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        gameObject.GetComponentInChildren<Text>().color = new Color(0, 255, 255, 255);
+        myText.color = colorado;
+        myText.fontSize = 50;
     }
 }
+
