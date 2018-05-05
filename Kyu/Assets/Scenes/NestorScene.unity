@@ -1613,7 +1613,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1648,6 +1648,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d352e581172c6429b551f86756b82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distToPlayer: 0
+  distToCore: 0
+  maxDistToPly: 15
 --- !u!1 &1272789732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,39 +1866,43 @@ Prefab:
       objectReference: {fileID: 513431509}
     - target: {fileID: 1971435635816688, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1749533030515830, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1847853652256530, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1628037115343180, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1060709350490454, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1026416075296446, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1995475034457998, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1390610241151112, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1176469732491018, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559320433239218, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d1b4a24560615545ad87cd214d9f7fe, type: 2}
