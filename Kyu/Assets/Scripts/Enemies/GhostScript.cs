@@ -9,6 +9,7 @@ public class GhostScript : MonoBehaviour {
 
     public float distToPlayer, distToCore;
     public float maxDistToPly = 15f;
+    public float disToCollisionWithPlayer;
     NavMeshAgent nav;
     enum state { idle, following, goCore, death };
 
@@ -29,6 +30,7 @@ public class GhostScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+
 
     void Update()
     {
@@ -58,41 +60,34 @@ public class GhostScript : MonoBehaviour {
         switch (currentState)
         {
             case state.following:
-                /* if (PlayerMovement.isHidden)
-                 {
-                     currentState = state.goHome;
-                     nav.SetDestination(home.position);  //following -> home
-                 }
-                 else
-                 {
-                     if (distToPlayer > maxDistToPly)
-                     {
-                         currentState = state.idle;  //following -> idle
-                         nav.SetDestination(transform.position);
-
-                     }
-                     else nav.SetDestination(player.position);
-                 }
-                 */
                 if (distToPlayer > maxDistToPly)
                 {
                     currentState = state.goCore; 
                     nav.SetDestination(levelCore.position);
 
                 }
-                else
+                else   // here is where the ghost is following the player
                 {
-                    if (KyuMovement.intoStatue)
+                    if(distToPlayer <= disToCollisionWithPlayer)
                     {
-                        currentState = state.goCore;
-                        nav.SetDestination(levelCore.position);
-                        print("el jugador entra en la estatua");
+                        print("HAS PERDIDO UNA VIDA");
+                        player.GetComponent<KyuHealth>().TakeDamage();
+                        Destroy(this.gameObject);
                     }
-                    else
+                    else //if not collides with the player
                     {
-                        nav.SetDestination(player.position);
+                        if (KyuMovement.intoStatue)
+                        {
+                            currentState = state.goCore;
+                            nav.SetDestination(levelCore.position);
+                            print("el jugador entra en la estatua");
+                        }
+                        else
+                        {
+                            nav.SetDestination(player.position);
+                        }
                     }
-                    
+
                 }
                 
                 break;
@@ -109,6 +104,7 @@ public class GhostScript : MonoBehaviour {
                     if (distToCore <= 5)
                     {
                         print("HAS PERDIDO UNA VIDA");
+                        player.GetComponent<KyuHealth>().TakeDamage();
                         Destroy(this.gameObject);
                     }
                 }
@@ -128,5 +124,10 @@ public class GhostScript : MonoBehaviour {
                 nav.enabled = false;
                 break;
         }
+    }
+
+    public void DeathEnemy()
+    {
+
     }
 }
