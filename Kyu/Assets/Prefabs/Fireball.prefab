@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 23296399236845356}
   - component: {fileID: 54634431868209548}
   - component: {fileID: 108669641450732946}
+  - component: {fileID: 114780402138261898}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943733210164360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 86.65, y: 4.065, z: 84.626}
+  m_LocalPosition: {x: 62.53964, y: 3.11, z: 80.48182}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4739592086172148}
@@ -167,6 +168,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114780402138261898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943733210164360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dbb02117593e14d8d7a2d688547bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135686120312957982
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -177,7 +189,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198766233657947476
 ParticleSystem:
