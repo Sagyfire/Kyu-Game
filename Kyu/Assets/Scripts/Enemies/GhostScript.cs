@@ -12,6 +12,9 @@ public class GhostScript : MonoBehaviour {
     public float disToCollisionWithPlayer;
     NavMeshAgent nav;
     enum state { idle, following, goCore, death };
+    public int health = 1;
+
+    public bool isDead;
 
     state currentState;
 
@@ -20,6 +23,7 @@ public class GhostScript : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         levelCore = GameObject.FindGameObjectWithTag("Core").transform;
         nav = GetComponent<NavMeshAgent>();
+        isDead = false;
 
     }
 
@@ -37,6 +41,11 @@ public class GhostScript : MonoBehaviour {
 
         distToPlayer = Vector3.Distance(player.position, this.transform.position);
         distToCore = Vector3.Distance(levelCore.position, this.transform.position);
+        //print(isDead);
+        if (isDead)
+        {
+            currentState = state.death;
+        }
         /* if(distToPlayer<= maxDistToPly)
          {
              currentState = state.following;
@@ -111,23 +120,34 @@ public class GhostScript : MonoBehaviour {
                 break;
 
             case state.idle:
-                if (distToPlayer <= maxDistToPly)
+               /* if (distToPlayer <= maxDistToPly)
                 {
                     currentState = state.following; //idle -> following
 
                     nav.SetDestination(player.position);
 
-                }
+                }*/
                 break;
 
             case state.death:
+                print("muerto");
                 nav.enabled = false;
+                Destroy(this.gameObject);
+                //Destroy(this.transform.parent.gameObject);
                 break;
         }
     }
 
-    public void DeathEnemy()
+    public void EnemyKilled()
     {
+        print("cambiamos el state a death");
+        isDead = true;
+        currentState = state.death;
+
+        //health = 0;
+        //print(health);
+        //Destroy(this.gameObject);
+        //Destroy(this.transform.parent.gameObject);
 
     }
 }

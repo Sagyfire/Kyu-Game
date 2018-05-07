@@ -15,6 +15,13 @@ public class FireBallScript : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+       
+        if (other.gameObject.name == "Ghost")
+        {
+            //Destroy(other.transform.parent.gameObject);
+            print("Matamos al enemigo");
+            //GameObject aux = other.gameObject;
+           other.gameObject.transform.parent.gameObject.GetComponent<GhostScript>().EnemyKilled();
+        }
     }
 }
