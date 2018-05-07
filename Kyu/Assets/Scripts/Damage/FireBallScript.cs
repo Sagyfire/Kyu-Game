@@ -23,5 +23,12 @@ public class FireBallScript : MonoBehaviour {
             //GameObject aux = other.gameObject;
            other.gameObject.transform.parent.gameObject.GetComponent<GhostScript>().EnemyKilled();
         }
+        if (other.gameObject.name == "OniMask")
+        {
+            //Destroy(other.transform.parent.gameObject);
+            print("Matamos al enemigo");
+            //GameObject aux = other.gameObject;
+            other.gameObject.transform.parent.gameObject.GetComponent<GhostScript>().EnemyKilled();
+        }
     }
 }

@@ -22,7 +22,7 @@ public class SpawnPointScript : MonoBehaviour {
 
         while (spawnEnemy)
         {
-            GameObject.Instantiate(ghost);
+            GameObject.Instantiate(ghost,this.gameObject.transform.position,this.gameObject.transform.rotation);
             yield return new WaitForSeconds(timeBetweenUnits);
         }
         yield return null;
