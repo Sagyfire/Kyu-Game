@@ -14,7 +14,7 @@ public class StatyeParticles : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
-        Kyu = GameObject.FindGameObjectWithTag("Player");
+ 
         var emission = ps.emission;
     }
     void Start () {
