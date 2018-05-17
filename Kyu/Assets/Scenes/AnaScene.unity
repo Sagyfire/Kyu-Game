@@ -1292,7 +1292,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 559742150
+  randomSeed: -1853067518
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4533,7 +4533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &657850150
 ParticleSystemRenderer:
   serializedVersion: 4
@@ -4650,7 +4650,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 687217270
+  randomSeed: -1677083591
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8202,19 +8202,19 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &913872448
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 412740, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913872447}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.299, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1712270421}
-  m_RootOrder: 0
+  m_Father: {fileID: 1926652835}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &913872449
 ParticleSystemRenderer:
@@ -8279,8 +8279,8 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 913872447}
   serializedVersion: 5
-  lengthInSec: 100000
-  simulationSpeed: 1
+  lengthInSec: 0.1
+  simulationSpeed: 10
   stopAction: 0
   looping: 1
   prewarm: 0
@@ -8332,14 +8332,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: 1751358579
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100000
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -8484,7 +8484,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -8783,7 +8783,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 0, y: 0, z: 1.06}
     placementMode: 0
     m_Mesh: {fileID: 0}
     m_MeshRenderer: {fileID: 0}
@@ -8978,7 +8978,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 3
+        scalar: 10
         minScalar: 3
         maxCurve:
           serializedVersion: 2
@@ -9017,7 +9017,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 1
-      repeatInterval: 0.01
+      repeatInterval: 10
   SizeModule:
     enabled: 0
     curve:
@@ -9279,9 +9279,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0.25882354, b: 0.25882354, a: 1}
         key1: {r: 1, g: 0.25882354, b: 0.25882354, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -9296,7 +9296,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
+        atime1: 53006
         atime2: 65535
         atime3: 61295
         atime4: 0
@@ -9305,7 +9305,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -12128,11 +12128,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 104814, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 122616, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19801488, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: randomSeed
@@ -12148,7 +12148,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 115082, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19850616, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: randomSeed
@@ -12176,7 +12176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 118182, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19801488, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: looping
@@ -12185,6 +12185,14 @@ Prefab:
     - target: {fileID: 19850616, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
       propertyPath: looping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 412740, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 412740, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
@@ -12524,12 +12532,12 @@ Transform:
   m_PrefabParentObject: {fileID: 453630, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608848396}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1712270421}
-  m_RootOrder: 1
+  m_Father: {fileID: 1926652835}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1608848398
 ParticleSystemRenderer:
@@ -12647,7 +12655,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: 1066681586
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13089,7 +13097,7 @@ ParticleSystem:
         m_RotationOrder: 4
   ShapeModule:
     serializedVersion: 5
-    enabled: 0
+    enabled: 1
     type: 4
     angle: 25
     length: 5
@@ -16026,11 +16034,9 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 913872448}
-  - {fileID: 1608848397}
+  m_Children: []
   m_Father: {fileID: 1926652835}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1763678683
 GameObject:
@@ -16210,6 +16216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 1932315444}
   ps2: {fileID: 647622069}
+  ps3: {fileID: 913872450}
   sphereColl: {fileID: 1926652836}
   increaseRadius: 0.15
   prey: {fileID: 0}
@@ -16225,6 +16232,8 @@ Transform:
   m_Children:
   - {fileID: 1932315442}
   - {fileID: 647622067}
+  - {fileID: 913872448}
+  - {fileID: 1608848397}
   - {fileID: 1712270421}
   m_Father: {fileID: 0}
   m_RootOrder: 23
@@ -16387,7 +16396,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -489698728
+  randomSeed: 1863786871
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -19662,6 +19671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 1458962408}
   ps2: {fileID: 0}
+  ps3: {fileID: 0}
   sphereColl: {fileID: 2050664660}
   increaseRadius: 0.02
   prey: {fileID: 0}

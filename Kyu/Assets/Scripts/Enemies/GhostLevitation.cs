@@ -15,11 +15,20 @@ public class GhostLevitation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // Float up/down with a Sin()
-        tempPos = posOffset;
-        tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+        if(child == null)
+        {
+            Destroy(this.gameObject);
+           
+        }
+        else
+        {
+            // Float up/down with a Sin()
+            tempPos = posOffset;
+            tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
 
-        //child.transform.position = tempPos;
-        child.transform.localPosition = tempPos;
+            //child.transform.position = tempPos;
+            child.transform.localPosition = tempPos;
+        }
+
     }
 }
