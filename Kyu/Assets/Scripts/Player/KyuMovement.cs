@@ -18,7 +18,6 @@ public class KyuMovement : MonoBehaviour {
     float camRayLenght = 100f;
 
 
-
 	public float TurnInputValue = 0f;
 	public float MovementInputValue = 0f;
 
@@ -63,16 +62,18 @@ public class KyuMovement : MonoBehaviour {
         Animating(h, v);
     }
 
+
+
     private void Update()
     {
+
         if (Input.GetKeyDown("space") && nearStatue)
         {
             StartCoroutine(ChangeCameraToStatue(lastStatue));
         }
-
-        
-
     }
+
+
 
     private void Move(float h, float v)
     {
@@ -179,5 +180,7 @@ public class KyuMovement : MonoBehaviour {
             print("lejos estatua");
         }
     }
+
+
 
 }

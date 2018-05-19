@@ -11,7 +11,10 @@ public class GhostScript : MonoBehaviour {
     public float maxDistToPly = 15f;
     public float disToCollisionWithPlayer;
     NavMeshAgent nav;
-    enum state { idle, following, goCore, death };
+   
+
+	//ENEMY STATE
+	enum state { idle, following, goCore, death };
     public int health = 1;
 
     public bool isDead;

@@ -10,6 +10,24 @@ public class KyuHealth : MonoBehaviour {
     public Color flashColour;
     public bool damaged = false;
 
+	//HP and HPHUD
+	private float currentHP;
+	public float GetCurrentHP() {return currentHP;}
+	public void SetCurrentHP(float hp)
+	{
+		currentHP = hp;
+	}
+
+	private float max_hp = 100f;
+	public float GetMaxHP(){return max_hp;}
+
+	public float GetHPPct()
+	{
+		return	(float)currentHP / max_hp;
+	}
+
+
+
 	// Use this for initialization
 	void Start () {
 		
