@@ -8,13 +8,12 @@ public class PlayerUI : MonoBehaviour {
 	RectTransform hpFill;
 
 	private KyuHealth kyu;
+
 	public void SetKyu (KyuHealth kyu)
 	{
 		this.kyu = kyu;
 	}
-
-
-
+		
 
 	void Update()
 	{

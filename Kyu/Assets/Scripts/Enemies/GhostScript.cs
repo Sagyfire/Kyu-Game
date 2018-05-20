@@ -83,6 +83,7 @@ public class GhostScript : MonoBehaviour {
                     if(distToPlayer <= disToCollisionWithPlayer)
                     {
                         print("HAS PERDIDO UNA VIDA");
+						//Kyu Attacked
                         player.GetComponent<KyuHealth>().TakeDamage();
                         Destroy(this.gameObject);
                     }
@@ -116,6 +117,7 @@ public class GhostScript : MonoBehaviour {
                     if (distToCore <= 5)
                     {
                         print("HAS PERDIDO UNA VIDA");
+						//Kuy Attacked
                         player.GetComponent<KyuHealth>().TakeDamage();
                         Destroy(this.gameObject);
                     }

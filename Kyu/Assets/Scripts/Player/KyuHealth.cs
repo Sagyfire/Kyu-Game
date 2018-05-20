@@ -9,6 +9,8 @@ public class KyuHealth : MonoBehaviour {
     public float flashSpeed = 5f;
     public Color flashColour;
     public bool damaged = false;
+	Transform player;
+	PlayerUI hud;
 
 	//HP and HPHUD
 	private float currentHP;
@@ -26,6 +28,15 @@ public class KyuHealth : MonoBehaviour {
 		return	(float)currentHP / max_hp;
 	}
 
+
+
+
+
+	void Awake()
+	{
+		player = GameObject.FindGameObjectWithTag("Player").transform;
+		//hud.SetKyu (this);
+	}
 
 
 	// Use this for initialization
@@ -51,6 +62,9 @@ public class KyuHealth : MonoBehaviour {
     public void TakeDamage ()
     {
         damaged = true;
+		currentHP -= 10f;
+		SetCurrentHP (currentHP);
+
     }
 
     IEnumerator DamageFlah()
