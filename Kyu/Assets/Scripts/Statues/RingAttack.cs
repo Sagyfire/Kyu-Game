@@ -10,6 +10,7 @@ public class RingAttack : MonoBehaviour {
     public SphereCollider sphereColl;
     public float increaseRadius = 0.02f;
 
+
     public GameObject prey; //the enemy that enters the zone
     // Use this for initialization
     void Start () {
