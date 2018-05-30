@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class GhostScript : MonoBehaviour {
     Transform player;
     Transform levelCore;
+	KyuHealth kyuHP;
 
     public float distToPlayer, distToCore;
     public float maxDistToPly = 15f;
@@ -84,7 +85,7 @@ public class GhostScript : MonoBehaviour {
                     {
                         print("HAS PERDIDO UNA VIDA");
 						//Kyu Attacked
-                        player.GetComponent<KyuHealth>().TakeDamage();
+					player.GetComponent<KyuHealth>().TakeDamage(1);
                         Destroy(this.gameObject);
                     }
                     else //if not collides with the player
@@ -118,7 +119,7 @@ public class GhostScript : MonoBehaviour {
                     {
                         print("HAS PERDIDO UNA VIDA");
 						//Kuy Attacked
-                        player.GetComponent<KyuHealth>().TakeDamage();
+                        player.GetComponent<KyuHealth>().TakeDamage(1);
                         Destroy(this.gameObject);
                     }
                 }
