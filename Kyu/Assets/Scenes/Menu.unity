@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+>>>>>>> Laura
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,6 +92,10 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+<<<<<<< HEAD
+=======
+    m_ShowResolutionOverlay: 1
+>>>>>>> Laura
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -228,7 +236,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 123459387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 19.025002, y: -0.0000019073486, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 892337932}
@@ -236,7 +248,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 19.025002, y: -0.0000023842}
+=======
+  m_AnchoredPosition: {x: 19.025, y: -0.0000023842}
+>>>>>>> Laura
   m_SizeDelta: {x: -38.05, y: -0.0000038147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123459389
@@ -473,7 +489,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 677741171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.0000076293945, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 937788424}
@@ -543,7 +563,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847426090}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 11, y: 94.065, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2034439435}
@@ -676,7 +700,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 892337931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.0000076293945, y: -44.53462, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 937788424}
@@ -769,7 +797,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 937788423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -75.5, y: -0.020000458, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 677741172}
@@ -814,6 +846,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 937788423}
+<<<<<<< HEAD
 --- !u!1 &944328534
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +936,8 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 944328534}
+=======
+>>>>>>> Laura
 --- !u!1 &964511592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,13 +1049,21 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982225431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -2.089981, y: -0.8505707, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1991098700}
   - {fileID: 1230991488}
   m_Father: {fileID: 2135972049}
+<<<<<<< HEAD
   m_RootOrder: 3
+=======
+  m_RootOrder: 2
+>>>>>>> Laura
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1049,7 +1092,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1013785147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -2.089981, y: -0.8505554, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1780046711}
@@ -1057,7 +1104,11 @@ RectTransform:
   - {fileID: 1870661970}
   - {fileID: 892337932}
   m_Father: {fileID: 2135972049}
+<<<<<<< HEAD
   m_RootOrder: 4
+=======
+  m_RootOrder: 3
+>>>>>>> Laura
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1122,7 +1173,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1032695541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -95, y: 29, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1870661970}
@@ -1210,7 +1265,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1065692526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 33.87001, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 552807251}
@@ -1219,7 +1278,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 33.870003, y: 0}
+=======
+  m_AnchoredPosition: {x: 33.87, y: 0}
+>>>>>>> Laura
   m_SizeDelta: {x: 57.73, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1080602553
@@ -1248,7 +1311,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080602553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 178.8, y: -88.9, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1443890761}
@@ -1423,7 +1490,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: fe85871d2606cf849bcd5d19a4d8cce1, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: f622bfce6db923c48a10c0f3bed32620, type: 3}
+>>>>>>> Laura
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1437,6 +1508,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115628807}
+<<<<<<< HEAD
 --- !u!1 &1186240423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1553,8 @@ MonoBehaviour:
   child: {fileID: 2126939703}
   amplitude: 2
   frequency: 0.4
+=======
+>>>>>>> Laura
 --- !u!1 &1230991487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1581,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1230991487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 178.3, y: -92.2, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1473942678}
@@ -1743,7 +1821,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1258190310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 16.82135, y: 37.200005, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2022714884}
@@ -1953,7 +2035,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1289829907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 34.100006, y: 0, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1870661970}
@@ -2205,7 +2291,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1545925726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 11, y: -22.306221, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 964511593}
@@ -2352,7 +2442,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780046710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -116.90001, y: 86.4, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 87822338}
@@ -2361,7 +2455,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -116.90001, y: 86.4}
+=======
+  m_AnchoredPosition: {x: -116.9, y: 86.4}
+>>>>>>> Laura
   m_SizeDelta: {x: 275.4, y: 86.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780046712
@@ -2474,7 +2572,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1870661969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -22, y: 5, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1289829908}
@@ -2633,7 +2735,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1973439194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 179.7, y: -33.299995, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 847426091}
@@ -2641,11 +2747,19 @@ RectTransform:
   - {fileID: 2070770632}
   - {fileID: 1545925727}
   m_Father: {fileID: 2135972049}
+<<<<<<< HEAD
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 179.7, y: -33.299995}
+=======
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 74.45, y: -4.6303}
+>>>>>>> Laura
   m_SizeDelta: {x: 337.9, y: 252.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973439196
@@ -2722,6 +2836,10 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+<<<<<<< HEAD
+=======
+  m_AllowDynamicResolution: 0
+>>>>>>> Laura
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2765,7 +2883,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1991098699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -116.3, y: 88, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 387732952}
@@ -3068,7 +3190,11 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070770631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 16.821335, y: -80.23664, z: 0}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> Laura
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1249887934}
@@ -3178,6 +3304,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070770631}
+<<<<<<< HEAD
 --- !u!1 &2126939703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,6 +3416,8 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2126939703}
+=======
+>>>>>>> Laura
 --- !u!1 &2135972045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,8 +3482,13 @@ Canvas:
   m_GameObject: {fileID: 2135972045}
   m_Enabled: 1
   serializedVersion: 3
+<<<<<<< HEAD
   m_RenderMode: 1
   m_Camera: {fileID: 1978056191}
+=======
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+>>>>>>> Laura
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3372,11 +3506,18 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2135972045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 1, z: 90}
   m_LocalScale: {x: 0.27042168, y: 0.27042168, z: 0.27042168}
   m_Children:
   - {fileID: 1115628808}
   - {fileID: 1186240424}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 1115628808}
+>>>>>>> Laura
   - {fileID: 1973439195}
   - {fileID: 982225432}
   - {fileID: 1013785148}

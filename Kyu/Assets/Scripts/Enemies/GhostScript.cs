@@ -6,12 +6,23 @@ using UnityEngine.AI;
 public class GhostScript : MonoBehaviour {
     Transform player;
     Transform levelCore;
+<<<<<<< HEAD
+=======
+	KyuHealth kyuHP;
+>>>>>>> Laura
 
     public float distToPlayer, distToCore;
     public float maxDistToPly = 15f;
     public float disToCollisionWithPlayer;
     NavMeshAgent nav;
+<<<<<<< HEAD
     enum state { idle, following, goCore, death };
+=======
+   
+
+	//ENEMY STATE
+	enum state { idle, following, goCore, death };
+>>>>>>> Laura
     public int health = 1;
 
     public bool isDead;
@@ -80,7 +91,12 @@ public class GhostScript : MonoBehaviour {
                     if(distToPlayer <= disToCollisionWithPlayer)
                     {
                         print("HAS PERDIDO UNA VIDA");
+<<<<<<< HEAD
                         player.GetComponent<KyuHealth>().TakeDamage();
+=======
+						//Kyu Attacked
+					player.GetComponent<KyuHealth>().TakeDamage(1);
+>>>>>>> Laura
                         Destroy(this.gameObject);
                     }
                     else //if not collides with the player
@@ -113,7 +129,12 @@ public class GhostScript : MonoBehaviour {
                     if (distToCore <= 5)
                     {
                         print("HAS PERDIDO UNA VIDA");
+<<<<<<< HEAD
                         player.GetComponent<KyuHealth>().TakeDamage();
+=======
+						//Kuy Attacked
+                        player.GetComponent<KyuHealth>().TakeDamage(1);
+>>>>>>> Laura
                         Destroy(this.gameObject);
                     }
                 }

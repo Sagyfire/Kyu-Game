@@ -18,7 +18,10 @@ public class KyuMovement : MonoBehaviour {
     float camRayLenght = 100f;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Laura
 	public float TurnInputValue = 0f;
 	public float MovementInputValue = 0f;
 
@@ -63,16 +66,30 @@ public class KyuMovement : MonoBehaviour {
         Animating(h, v);
     }
 
+<<<<<<< HEAD
     private void Update()
     {
+=======
+
+
+    private void Update()
+    {
+
+>>>>>>> Laura
         if (Input.GetKeyDown("space") && nearStatue)
         {
             StartCoroutine(ChangeCameraToStatue(lastStatue));
         }
+<<<<<<< HEAD
 
         
 
     }
+=======
+    }
+
+
+>>>>>>> Laura
 
     private void Move(float h, float v)
     {
@@ -180,4 +197,9 @@ public class KyuMovement : MonoBehaviour {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> Laura
 }
