@@ -7,7 +7,7 @@ public class GhostScript : MonoBehaviour {
     Transform player;
     Transform levelCore;
 
-    public float distToPlayer, distToCore;
+    public float distToPlayer, distToCore, maxDistToCore;
     public float maxDistToPly = 15f;
     public float disToCollisionWithPlayer;
     NavMeshAgent nav;
@@ -80,7 +80,7 @@ public class GhostScript : MonoBehaviour {
                     if(distToPlayer <= disToCollisionWithPlayer)
                     {
                         print("HAS PERDIDO UNA VIDA");
-                        player.GetComponent<KyuHealth>().TakeDamage(1);
+                        player.GetComponent<KyuHealth>().TakeDamage(10);
                         Destroy(this.gameObject);
                     }
                     else //if not collides with the player
@@ -110,10 +110,10 @@ public class GhostScript : MonoBehaviour {
                 }
                 else
                 {
-                    if (distToCore <= 5)
+                    if (distToCore <= maxDistToCore)
                     {
                         print("HAS PERDIDO UNA VIDA");
-                        player.GetComponent<KyuHealth>().TakeDamage(1);
+                        player.GetComponentInChildren<KyuHealth>().TakeDamage(5);
                         Destroy(this.gameObject);
                     }
                 }
