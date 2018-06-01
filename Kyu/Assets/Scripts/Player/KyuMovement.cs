@@ -43,7 +43,7 @@ public class KyuMovement : MonoBehaviour {
 
         //cam = GetComponentInChildren<Camera>();
         cameraDistanceInitial = transform.position - cam.transform.position;
-        print(cameraDistanceInitial);
+        //print(cameraDistanceInitial);
         initialKyuRotation = transform.rotation;
         initialCamRotation = cam.transform.rotation;
 

@@ -28,19 +28,28 @@ public class WaveSpawner : MonoBehaviour {
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+    GameObject aux;
 
-	void Start () {
+
+    void Start () {
         waveCountdown = timeBetweenwaves;
         if (spawnPoints.Length == 0)
         {
             Debug.LogError("No spawn points reference.");
         }
+
+        print(GameObject.FindGameObjectsWithTag("Enemy").Length);
+       aux = GameObject.FindGameObjectWithTag("Enemy");
+        //print(aux.transform.parent.gameObject.name);
+       // Destroy(aux);
     }
 	
 	void Update ()
     {
+        //print(aux.transform.position);
         if(state == SpawnState.WAITING)
         {
+            //print(EnemyIsAlive());
             if (!EnemyIsAlive())
             {
                 //begin a new round
@@ -88,14 +97,21 @@ public class WaveSpawner : MonoBehaviour {
 
     bool EnemyIsAlive()
     {
+        
         searchCountdown -= Time.deltaTime;
         if(searchCountdown <= 0f)
         {
+            print("Buscamos");
             searchCountdown = 1f;
             if(GameObject.FindGameObjectWithTag("Enemy") == null)
             {
                 return false;
             }
+            GameObject aux = GameObject.FindGameObjectWithTag("Enemy");
+            //print(aux);
+            //print(aux.transform.position);
+            //print(aux.name);
+            print(GameObject.FindGameObjectsWithTag("Enemy").Length);
         }
         return true;
     }
