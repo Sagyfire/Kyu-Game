@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -275,6 +275,16 @@ MonoBehaviour:
   TurnSpeed: 180
   TurnInputValue: 0
   MovementInputValue: 0
+  camVelocity: 1
+  animationCamera: {fileID: 0}
+  animationCamera2: {fileID: 0}
+  animationCameraVelocity: 0
+  animationCameraRotation: 0
+  nearStatue: 0
+  cameraDistanceInitial: {x: 0, y: 0, z: 0}
+  initialKyuRotation: {x: 0, y: 0, z: 0, w: 0}
+  initialCamRotation: {x: 0, y: 0, z: 0, w: 0}
+  cam: {fileID: 0}
 --- !u!54 &1034953178
 Rigidbody:
   m_ObjectHideFlags: 0

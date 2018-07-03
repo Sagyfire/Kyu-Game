@@ -43,7 +43,7 @@ public class KyuMovement : MonoBehaviour {
 
         //cam = GetComponentInChildren<Camera>();
         cameraDistanceInitial = transform.position - cam.transform.position;
-        print(cameraDistanceInitial);
+        //print(cameraDistanceInitial);
         initialKyuRotation = transform.rotation;
         initialCamRotation = cam.transform.rotation;
 
@@ -114,6 +114,8 @@ public class KyuMovement : MonoBehaviour {
 
     IEnumerator ChangeCameraToStatue(Collider other)
     {
+
+        Debug.Log("Cabmiamos camara");
         intoStatue = true;          //This to make the enemies continue to the core.
 
         Transform point1;
@@ -131,13 +133,15 @@ public class KyuMovement : MonoBehaviour {
 
         point1 = components[1].transform;
         point2 = components[2].transform;
-
+        print(point1);
+        print(point2);
         cam.GetComponent<CameraScript>().inTransition = true;
 
         while (Vector3.Distance(cam.transform.position, point1.position) >= 0.8f)
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, point1.position, animationCameraVelocity * Time.deltaTime);
             cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, point1.rotation, animationCameraRotation * Time.deltaTime);
+            print("moviendo");
             yield return null;
 
 

@@ -12,7 +12,8 @@ public class CameraScript : MonoBehaviour {
     public bool inTransition = false;
     // Use this for initialization
     void Start () {
-		
+        transform.position = positionOfCam.transform.position;
+        transform.rotation = orientationOfCam.transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -21,12 +22,12 @@ public class CameraScript : MonoBehaviour {
         if (!inTransition)
         {
             transform.position = Vector3.Lerp(transform.position, positionOfCam.position, camVelocity * Time.deltaTime);
-            /*transform.rotation = Quaternion.LookRotation(kyu.position);*/
+            //transform.rotation = Quaternion.LookRotation(orientationOfCam.transform.rotation);
+            //transform.rotation = orientationOfCam.transform.rotation;
 
-
-            Vector3 relativePos = orientationOfCam.position - transform.position;
+            Vector3 relativePos = kyu.transform.position - transform.position;
             Quaternion rotation = Quaternion.LookRotation(relativePos);
-
+           // transform.rotation = rotation;
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
